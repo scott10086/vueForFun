@@ -1,9 +1,12 @@
 <template>
   <div class="hello">
-    <a>
-      <router-link to="/hello">{{msg}}</router-link>
-    </a>
-    <router-view/>
+    <Panel header="hello">
+      <img src="../assets/logo.png" />
+      <br />
+      <a>
+        <router-link to="/hello">{{msg}}</router-link>
+      </a>
+    </Panel>
   </div>
 </template>
 
@@ -12,7 +15,7 @@ export default {
   name: "HelloWorld2",
   data() {
     return {
-      msg: "只是想测试一下"
+      msg: "HelloWorld2 ： 只是想测试一下"
     };
   }
 };
@@ -20,17 +23,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
+.hello {
   font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
+  text-align: center;
 }
 a {
   color: #42b983;

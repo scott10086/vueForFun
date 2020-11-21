@@ -1,14 +1,11 @@
 <template>
   <div class="hello">
-    <Panel header="CRUD 4SD">
-      <Menubar :model="items"/>
-      <br>
-      <DataTable :value="personas" :paginator="true" :rows="10">
-        <Column field="nombre" header="Nombre"></Column>
-        <Column field="apellido" header="Apellido"></Column>
-        <Column field="direccion" header="Dirección"></Column>
-        <Column field="telefono" header="Teléfono"></Column>
-      </DataTable>
+    <Panel header="hello2">
+      <img src="../assets/logo.png" />
+      <br />
+      <a>
+        <router-link to="/hello2">{{msg}}</router-link>
+      </a>
     </Panel>
   </div>
 </template>
@@ -18,33 +15,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      personas: null,
-      persona: {
-        nombre: null,
-        apellido: null,
-        direccion: null,
-        telefono: null
-      },
-      items: [
-        {
-          label: "Hello2",
-          icon: "pi pi-fw pi-plus",
-          to: "/hello2"
-        },
-        {
-          label: "Editar",
-          icon: "pi pi-fw pi-pencil"
-        },
-        {
-          label: "Eliminar",
-          icon: "pi pi-fw pi-trash"
-        },
-        {
-          label: "Refrescar",
-          icon: "pi pi-fw pi-refresh"
-        }
-      ],
-      displayModal: false
+      msg: "HelloWorld ： 只是想测试一下路由跳转"
     };
   }
 };
@@ -52,17 +23,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
+.hello {
   font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
+  text-align: center;
 }
 a {
   color: #42b983;
