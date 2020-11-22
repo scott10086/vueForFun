@@ -1,5 +1,6 @@
-import HelloWorld from './HelloWorld';
-import HelloWorld2 from './HelloWorld2';
+import Basic1 from './basic-test/Basic1';
+import HelloWorld from './router-test/HelloWorld';
+import HelloWorld2 from './router-test/HelloWorld2';
 
 let PageRouter = [
   {
@@ -11,6 +12,12 @@ let PageRouter = [
     path: 'hello',
     name: 'HelloWorld',
     component: HelloWorld
+  },
+  {
+    path: 'basic1',
+    name: 'basic1',
+    component: Basic1
   }
+
 ];
 export default PageRouter;

@@ -1,0 +1,76 @@
+<html>
+
+<body>
+
+  <div id="app">
+    <span>Message: {{ msg }}</span>
+    <br>
+    <span v-once>这个将不会改变: {{ msg }}</span>
+
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+
+    <div v-bind:id="dynamicId"></div>
+
+    <button v-bind:disabled="isButtonDisabled">Button</button>
+
+    <br>
+    {{ number + 1 }}
+    <br>
+    {{ ok ? 'YES' : 'NO' }}
+    <br>
+    {{ message.split('').reverse().join('') }}
+    <br>
+    <div v-bind:id="'list-' + id"></div>{{'list-' + id}}
+
+    <p v-if="seen">现在你看到我了</p>
+    <a v-bind:href="url">百度a:v-bind:href</a>
+    <br>
+    <a v-on:click="doSomething">百度a:v-on:click</a>
+    <br>
+    <!-- 注意，参数表达式的写法存在一些约束，如之后的“对动态参数表达式的约束”章节所述。-->
+    <a v-bind:[attribute_name]="url"> 百度 v-bind:[attributeName] </a>
+    <br>
+    <input v-on:[event_name]="doSomething" placeholder="百度 v-on:[event_name]" />
+    <br>
+
+    <!-- 这会触发一个编译警告 -->
+    <!-- <a v-bind:['foo' + bar]="value"> ... v-bind:['foo' + bar]</a> -->
+    <br>
+    <!--在 DOM 中使用模板时这段代码会被转换为 `v-bind:[someattr]`。除非在实例中有一个名为“someattr”的 property，否则代码不会工作。-->
+    <a v-bind:[someAttr]="value"> 百度 v-bind:[someAttr]</a>
+
+    <form v-on:submit.prevent="onSubmit">
+      <button>submit</button>
+    </form>
+    <br>
+
+    <!-- 完整语法 -->
+    <a v-bind:href="url">百度 v-bind:href</a>
+    <br>
+    <!-- 缩写 -->
+    <a :href="url">百度 :href</a>
+    <br>
+    <!-- 动态参数的缩写 (2.6.0+) -->
+    <a :[key]="url"> 百度 :[key] </a>
+    <br>
+    <br>
+    <!-- 完整语法 -->
+    <a v-on:click="doSomething">百度 v-on:click</a>
+    <br>
+    <!-- 缩写 -->
+    <a @click="doSomething">百度 @click</a>
+    <br>
+    <!-- 动态参数的缩写 (2.6.0+) -->
+    <a @[event]="doSomething"> 百度 @[event]</a>
+    <br>
+  </div>
+
+</body>
+
+</html>
+
+
+
+<script src="../../../node_modules//vue/dist/vue.js"></script>
+<script src="./template-syntax.js"></script>

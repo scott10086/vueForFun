@@ -1,0 +1,43 @@
+<html>
+
+<body>
+
+  <div id="example">
+    <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">666 v-bind:class="{ active: isActive, 'text-danger': hasError }"</div>
+
+    <div class="static" v-bind:class="classObject">666 v-bind:class="classObject"</div>
+
+    <div class="static" v-bind:class="classObjectMethod">666 v-bind:class="classObjectMethod</div>
+
+    <div v-bind:class="[activeClass, errorClass]">666 v-bind:class="[activeClass, errorClass]"</div>
+
+    <div v-bind:class="[isActive ? activeClass : '', errorClass]">666 v-bind:class="[isActive ? activeClass : '', errorClass]"</div>
+
+    <div v-bind:class="[{ active: isActive }, errorClass]">666 v-bind:class="[{ active: isActive }, errorClass]"</div>
+
+    <my-component class="baz boo"></my-component>
+
+    <my-component v-bind:class="{ active: isActive }"></my-component>
+
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"> v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"</div>
+
+    <div v-bind:style="styleObject"> v-bind:style="styleObject"</div>
+
+    <div v-bind:style="[baseStyles, overridingStyles]"> v-bind:style="[baseStyles, overridingStyles]"</div>
+
+    <div v-bind:style="transFormStyle"> v-bind:style="transFormStyle"</div>
+
+    <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'],'margin-top':'50px'}">666</div>
+
+  </div>
+
+
+
+</body>
+
+</html>
+
+
+
+<script src="../../../node_modules/vue/dist/vue.js"></script>
+<script src="./data-bind.js"></script>

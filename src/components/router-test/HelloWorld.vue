@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <Panel header="hello2">
-      <img src="../assets/logo.png" />
+      <img src="../../assets/logo.png" />
       <br />
       <a>
         <router-link to="/hello2">{{msg}}</router-link>

@@ -1,0 +1,40 @@
+<html>
+
+<body>
+
+  <div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    <p>Reversed message: "{{ reversedMessageMethod() }}"</p>
+    <p>{{now}}</p>
+    <p>{{nowMethod()}}</p>
+  </div>
+
+  <div id="demo">{{ fullName }}</div>
+  <div id="demo2">{{ fullName }}</div>
+  <div id="demo3">
+    <p>{{ firstName }}</p>
+    <p>{{ lastName }}</p>
+    <p>{{ fullName }}</p>
+    <button @click="fullNameChange()">fullNameChange</button>
+  </div>
+
+  <div id="watch-example">
+    <p>
+      Ask a yes/no question:
+      <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+  </div>
+
+
+</body>
+
+</html>
+
+
+
+<script src="../../../node_modules/vue/dist/vue.js"></script>
+<script src="../../../node_modules/axios/dist/axios.min.js"></script>
+<script src="../../../node_modules/lodash/lodash.min.js"></script>
+<script src="./computed-attr.js"></script>

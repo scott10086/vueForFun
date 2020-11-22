@@ -5,7 +5,7 @@ import MegaMenu from 'primevue/megamenu';
 import Panel from 'primevue/panel';
 import 'primevue/resources/primevue.min.css';
 import Vue from 'vue';
-import router from './app.router';
+import appRouter from './app.router';
 import App from './App.vue';
 
 
@@ -18,7 +18,7 @@ Vue.component('Panel', Panel);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router: appRouter,
   components: { App },
   template: '<App/>'
 })
