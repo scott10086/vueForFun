@@ -4,6 +4,49 @@
 
   <div id="components-demo">
     <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <br><br>
+
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post title="Blogging with Vue"></blog-post>
+    <blog-post title="Why Vue is so fun"></blog-post>
+  </div>
+
+  <br>
+
+  <div id="blog-post-demo">
+    <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+  </div>
+
+  <br>
+
+  <div id="blog-post-demo1">
+    <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post>
+  </div>
+
+  <div id="blog-posts-events-demo">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+      <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize"></blog-post>
+    </div>
+  </div>
+
+  <hr>
+
+  <div id="blog-posts-events-demo1">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+      <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize +=$event"></blog-post>
+      <!-- <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="onEnlargeText"></blog-post> -->
+    </div>
+  </div>
+
+  <div id="blog-posts-events-demo2">
+    <!-- <custom-input v-bind:value="searchText" v-on:input="searchText = $event"></custom-input> -->
+    <custom-input v-model="searchText"></custom-input>
+
+    <alert-box>
+      Something bad happened.
+    </alert-box>
   </div>
 
 </body>
