@@ -81,13 +81,18 @@ Vue.component('blog-post', {
   props: ['post'],
   template: `
     <div class="blog-post">
-      <h3>{{ post.title }}</h3>
+      <h3>{{ post1.title }}</h3>
       <button v-on:click="$emit('enlarge-text',0.1)">
         Enlarge text
       </button>
-      <div v-html="post.content"></div>
+      <div v-html="post1.content"></div>
     </div>
-  `
+  `,
+  data:function(){
+    return{
+      post1:this.post
+    }
+  }
 })
 new Vue({
   el: '#blog-posts-events-demo1',

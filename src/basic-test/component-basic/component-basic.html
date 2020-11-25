@@ -33,6 +33,7 @@
 
   <hr>
 
+  blog-posts-events-demo1
   <div id="blog-posts-events-demo1">
     <div :style="{ fontSize: postFontSize + 'em' }">
       <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize +=$event"></blog-post>
@@ -40,6 +41,7 @@
     </div>
   </div>
 
+  blog-posts-events-demo2
   <div id="blog-posts-events-demo2">
     <!-- <custom-input v-bind:value="searchText" v-on:input="searchText = $event"></custom-input> -->
     <custom-input v-model="searchText"></custom-input>
